@@ -8,7 +8,7 @@ image
 ### Building and applying kubernetes configuration
 
 ```
-nix eval -f ./. --json result | kubectl apply -f -
+kubectl apply -f $(nix-build --no-out-link -A result)
 ```
 
 ### Building and pushing docker images
